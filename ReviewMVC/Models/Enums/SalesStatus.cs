@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ReviewMVC.Models
+namespace ReviewMVC.Models.Enums
 {
     public enum SalesStatus:int
     {
-        PENDING = 1,
-        BILLED = 2,
-        CANCELED = 3
+        PENDING = 0,
+        BILLED = 1,
+        CANCELED = 2
     }
 }

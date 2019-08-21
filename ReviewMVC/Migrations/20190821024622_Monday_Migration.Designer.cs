@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReviewMVC.Models;
 
 namespace ReviewMVC.Migrations
 {
     [DbContext(typeof(ReviewMVCContext))]
-    partial class ReviewMVCContextModelSnapshot : ModelSnapshot
+    [Migration("20190821024622_Monday_Migration")]
+    partial class Monday_Migration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
