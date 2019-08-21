@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using ReviewMVC.Models;
 
 namespace ReviewMVC
 {
@@ -33,6 +35,10 @@ namespace ReviewMVC
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<ReviewMVCContext>(options =>
+                    options.UseMySql(Configuration.GetConnectionString("ReviewMVCContext"), builder =>
+            builder.MigrationsAssembly("ReviewMVC")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
